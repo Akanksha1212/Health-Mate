@@ -1,0 +1,10 @@
+body {
+	font-family: 'Open Sans';
+}
+label {
+	font-size: 1.5rem;
+	padding-bottom: 1.2rem;
+}
+.accordion-button {
+	font-size: 1.2rem;
+}
