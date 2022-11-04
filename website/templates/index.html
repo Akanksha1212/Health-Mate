@@ -28,16 +28,16 @@
 
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="individual-tab" data-bs-toggle="tab" data-bs-target="#individual-panel" type="button" role="tab" aria-controls="individual-tab" aria-selected="true">Individual Patient Data</button>
+                    <button class="nav-link active" id="individual-tab" data-bs-toggle="tab" data-bs-target="#individual-pane" type="button" role="tab" aria-controls="individual-tab" aria-selected="true">Individual Patient Data</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="collective-tab" data-bs-toggle="tab" data-bs-target="#collective-panel" type="button" role="tab" aria-controls="collective-tab" aria-selected="false">Aggregated Statistics</button>
+                    <button class="nav-link" id="collective-tab" data-bs-toggle="tab" data-bs-target="#collective-pane" type="button" role="tab" aria-controls="collective-tab" aria-selected="false">Aggregated Statistics</button>
                 </li>
             </ul>
 
 
             <div class="tab-content">
-                <div class="tab-pane active" id="individual-tab" role="tabpanel" aria-labelledby="individual-tab">
+                <div class="tab-pane active" id="individual-pane" role="tabpanel" aria-labelledby="individual-pane">
                     <div class="p-3 mb-4 bg-light rounded-3">
                         <div class="container-fluid py-5">
                             <form>
@@ -58,11 +58,64 @@
 
                     <div id="response"></div>
                 </div>
+
+                <div class="tab-pane" id="collective-pane" role="tabpanel" aria-labelledby="collective-pane">
+                    <div class="p-3 mb-4 bg-light rounded-3">
+                        <div class="container-fluid py-5">
+                            <form>
+                                <div class="form-group">
+                                    <label for="collective_dropdown">Select Patient</label>
+                                    <select class="form-control form-control-lg" id="collective_dropdown">
+                                        <option disabled selected value>Select a name</option>
+                                        <option>David</option>
+                                        <option>Peter</option>
+                                        <option>Susan</option>
+                                        <option>Mark</option>
+                                        <option>Rachel</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="chart-box" style="position: relative; height:400px; width:40vw">
+                                <canvas id="chart-0"></canvas>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="chart-box" style="position: relative; height:400px; width:40vw">
+                                <canvas id="chart-1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="chart-box" style="position: relative; height:400px; width:40vw">
+                                <canvas id="chart-2"></canvas>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="chart-box" style="position: relative; height:400px; width:40vw">
+                                <canvas id="chart-3"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="chart-box" style="position: relative; height:400px; width:40vw">
+                                <canvas id="chart-4"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
 	</body>
 </html>

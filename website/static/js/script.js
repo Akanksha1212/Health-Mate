@@ -1,3 +1,13 @@
+//var triggerTabList = [].slice.call(document.querySelectorAll('#myTab a'))
+//triggerTabList.forEach(function (triggerEl) {
+//  var tabTrigger = new bootstrap.Tab(triggerEl)
+//
+//  triggerEl.addEventListener('click', function (event) {
+//    event.preventDefault()
+//    tabTrigger.show()
+//  })
+//})
+
 var answerMap = {
 	'1': 'Not at all',
 	'2': 'A little',
@@ -20,7 +30,7 @@ function updateData(username) {
         timeout: 6000,
         beforeSend: function (xhr, settings) {
         	$('#patient_name_dropdown').attr('disabled', true);
-            showLoader('Sending request...', true, true);
+            showLoader();
         },
         success: function (data) {
             renderResult(data);
@@ -31,17 +41,17 @@ function updateData(username) {
             return false;
         }
     });
-}
+};
 
 function showLoader() {
-var html = `
-<div class="d-flex justify-content-center">
-	<div class="spinner-border" role="status"></div>
-</div>
-`;
+	var html = `
+	<div class="d-flex justify-content-center">
+		<div class="spinner-border" role="status"></div>
+	</div>
+	`;
 
-$("#response").html(html);
-}
+	$("#response").html(html);
+};
 
 function renderResult(data) {
 	console.log(data);
@@ -76,4 +86,4 @@ function renderResult(data) {
 	`;
 
 	$("#response").html(html);
-}
+};
